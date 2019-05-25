@@ -9,7 +9,7 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
@@ -43,17 +43,54 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
     ],
     'params' => $params,
+
+    'language' => 'zh-CN',
+    'timeZone' => 'Asia/Shanghai',
 ];
+
+$config['modules']['admin'] = [
+    'class' => 'yiiapps\adminlte\Module',
+    'layout' => 'main',
+    'menus' => [], //详见 mdmsoft/yii2-admin
+];
+$config['aliases']['@yiiapps/adminlte'] = '@vendor/yiiapps/adminlte-asset-ext';
+$config['components']['user'] = [
+    'identityClass' => 'mdm\admin\models\User',
+    'loginUrl' => ['admin/user/login'],
+    'enableAutoLogin' => false,
+];
+$config['components']['authManager'] = [
+    'class' => 'yii\rbac\DbManager',
+];
+$config['as access'] = [
+    'class' => 'mdm\admin\components\AccessControl',
+    'allowActions' => [
+        'site/*',
+        'blog/*',
+    ],
+];
+
+//管理端
+$config['aliases']['@yiiapps/adminblog'] = '@vendor/yiiapps/blogmodule';
+$config['modules']['adminblog'] = [
+    'class' => 'yiiapps\adminblog\Module',
+    'controllerNamespace' => 'yiiapps\adminblog\controllers\backend',
+];
+//frontend
+$config['defaultRoute'] = 'blog';
+$config['modules']['blog'] = [
+    'class' => 'funson86\blog\Module',
+    'controllerNamespace' => 'funson86\blog\controllers\frontend',
+];
+$config['aliases']['@common/models'] = '@app/common/models';
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
