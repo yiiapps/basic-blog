@@ -80,6 +80,7 @@ $config['as access'] = [
 
 //管理端
 $config['aliases']['@yiiapps/adminblog'] = '@vendor/yiiapps/blogmodule';
+$config['aliases']['@yiiapps/blog'] = '@vendor/yiiapps/blogmodule';
 $config['modules']['adminblog'] = [
     'class' => 'yiiapps\adminblog\Module',
     'controllerNamespace' => 'yiiapps\adminblog\controllers\backend',
