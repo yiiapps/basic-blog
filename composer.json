@@ -17,8 +17,7 @@
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "yiiapps/blogmodule": "~0.1",
-        "almasaeed2010/adminlte": "2.4.17"
+        "yiiexttbq/blogmodule": "~1.0.191022.3"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

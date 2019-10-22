@@ -10,6 +10,8 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
+        '@funson86' => '@vendor/yiiexttbq',
+        '@yiiexttbq/adminblog' => '@vendor/yiiexttbq/blogmodule',
     ],
     'components' => [
         'request' => [
@@ -57,11 +59,10 @@ $config = [
 ];
 
 $config['modules']['admin'] = [
-    'class' => 'yiiapps\adminlte\Module',
+    'class' => 'yiiexttbq\adminlte\Module',
     'layout' => 'main',
     'menus' => [], //详见 mdmsoft/yii2-admin
 ];
-$config['aliases']['@yiiapps/adminlte'] = '@vendor/yiiapps/adminlte-asset-ext';
 $config['components']['user'] = [
     'identityClass' => 'mdm\admin\models\User',
     'loginUrl' => ['admin/user/login'],
@@ -79,11 +80,9 @@ $config['as access'] = [
 ];
 
 //管理端
-$config['aliases']['@yiiapps/adminblog'] = '@vendor/yiiapps/blogmodule';
-$config['aliases']['@yiiapps/blog'] = '@vendor/yiiapps/blogmodule';
 $config['modules']['adminblog'] = [
-    'class' => 'yiiapps\adminblog\Module',
-    'controllerNamespace' => 'yiiapps\adminblog\controllers\backend',
+    'class' => 'yiiexttbq\blogmodule\Module',
+    'controllerNamespace' => 'yiiexttbq\blogmodule\controllers\backend',
 ];
 //frontend
 $config['defaultRoute'] = 'blog';
