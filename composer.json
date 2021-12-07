@@ -17,7 +17,7 @@
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "yiiexttbq/blogmodule": "~1.0.191022.3"
+        "yiiexttbq/blogmodule": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -61,7 +61,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://asset-packagist.org"
+            "url": "https://asset-packagist.cn"
         }
     ]
 }
